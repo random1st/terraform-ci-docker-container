@@ -9,4 +9,4 @@ RUN  apt-get update && \
      chmod +x terraform && \
      cp terraform /usr/local/bin/
 
-RUN pip install virtualenv awscli tox boto3 python-terraform
+RUN pip install virtualenv awscli tox boto3
