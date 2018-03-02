@@ -1,0 +1,12 @@
+FROM python:3.6
+
+MAINTAINER Roman Voronin version: 0.1
+
+RUN  apt-get update && \
+     apt-get install -y zip unzip jq &&
+     wget https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip &&
+     unzip  terraform_0.11.3_linux_amd64.zip &&
+     chmod +x terraform &&
+     cp terraform /usr/local/bin/
+
+RUN pip install virtualenv awscli tox
