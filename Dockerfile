@@ -10,3 +10,4 @@ RUN  apt-get update && \
      cp terraform /usr/local/bin/
 
 RUN pip install virtualenv awscli tox
+RUN virtualenv --python=python3 .venv
