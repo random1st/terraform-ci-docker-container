@@ -12,7 +12,12 @@ RUN wget https://releases.hashicorp.com/packer/1.2.1/packer_1.2.1_linux_amd64.zi
     unzip packer_1.2.1_linux_amd64.zip && \
     chmod +x packer && \
     cp packer /usr/local/bin
-RUN apt-get install -y ansible
-RUN pip install virtualenv awscli tox boto3 
+RUN pip install virtualenv awscli tox boto3 ansible
+RUN which terraform && terraform -v && \
+    which packer  && packer -v && \
+    which aws && aws --version && \
+    which tox && tox --version && \
+    which ansible-playbook && ansible-playbook --version
+
 
 
