@@ -8,5 +8,10 @@ RUN  apt-get update && \
      unzip  terraform_0.11.3_linux_amd64.zip && \
      chmod +x terraform && \
      cp terraform /usr/local/bin/
+RUN wget https://releases.hashicorp.com/packer/1.2.1/packer_1.2.1_linux_amd64.zip && \
+    unzip packer_1.2.1_linux_amd64.zip && \
+    chmod +x packer && \
+    cp packer /usr/local/bin
+RUN pip install virtualenv awscli tox boto3 ansible
 
-RUN pip install virtualenv awscli tox boto3
+
